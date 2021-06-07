@@ -1,0 +1,24 @@
+{
+  "name": "todo_js",
+  "version": "1.0.0",
+  "description": "The Odin Project: Todo List https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/javascript/lessons/todo-list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epysqyli/todo_js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epysqyli/todo_js/issues"
+  },
+  "homepage": "https://github.com/epysqyli/todo_js#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.7.1"
+  }
+}
