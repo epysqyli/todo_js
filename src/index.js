@@ -5,8 +5,3 @@ import "@fortawesome/fontawesome-free/js/brands";
 
 import projects from "./todoes";
 
-console.log(projects);
-console.log(projects);
-console.log(projects);
-console.log(projects);
-console.log(projects);
