@@ -13,6 +13,7 @@ const createToDo = (
 let projects = {
   addProject: function (projectName) {
     this[projectName] = {
+      name: String(projectName),
       addToDo: function (toDo) {
         this[toDo.title] = { toDo };
       },
