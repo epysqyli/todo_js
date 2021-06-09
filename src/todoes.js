@@ -1,19 +1,28 @@
-// factory function creating a single ToDo object
+// declare object containing all projects
+let projects = {
+  addProject: function(projectName) {
+    this[projectName] = {
+      addToDo: function(toDo) {
+        this[toDo.title] = {toDo};
+      }
+    };
+  }
+};
+
+// declare project object
+let projectPrototype = {
+  addToDoItem: function(toDo) {
+    this[toDo.title] = {toDo};
+  }
+};
+
+// declare factory function for toDo objects
 const createToDo = (
   title,
   description,
   dueDate,
-  project = "default",
+  project = "defaultProject",
   complete = false
 ) => {
-  return { title, description, dueDate, complete };
+  return { title, description, dueDate, project, complete };
 };
-
-let first = createToDo(
-  "first todo",
-  "This is a way for me to remember things",
-  "tomorrow"
-);
-
-// when the app is opened, there is a default project object to which every new created toDo goes in automatically. Users can create new project objects of course
-
