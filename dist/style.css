@@ -15,7 +15,7 @@ nav {
   height: 7vh;
   position: fixed;
   width: 100%;
-  box-shadow: 2px 0 2px 1px black;
+  box-shadow: 0 4px 2px -2px black;
 }
 
 nav::after {
@@ -65,6 +65,8 @@ nav>#brand {
 #content {
   padding-top: 8vh;
   display: flex;
+  margin: auto;
+  max-width: 1400px;
 }
 
 #projects-container {
@@ -72,7 +74,7 @@ nav>#brand {
   flex-direction: column;
   margin: 10px;
   width: 20%;
-  max-height: 90vh;
+  max-height: 88vh;
   min-width: 170px;
   border: 1px solid black;
   padding: 5px;
@@ -99,6 +101,10 @@ nav>#brand {
   border: 1px solid red;
 }
 
+#projects-list > * {
+  cursor: pointer;
+}
+
 #add-btn {
   text-transform: uppercase;
   border: 1px solid black;
@@ -118,8 +124,26 @@ nav>#brand {
 }
 
 #items-container {
-  height: 90vh;
+  height: 88vh;
+  max-height: 88vh;
   border: 1px solid black;
   flex-grow: 1;
   margin: 1vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  background-color: rgba(40, 50, 10, .1);
+  box-shadow: 0 4px 2px -2px black;
+}
+
+.navbar > * {
+  margin: 0 4vw;
+}
+
+.navbar > #add-to-do {
+  cursor: pointer;
 }
