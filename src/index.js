@@ -42,7 +42,8 @@ let testItem = builder.createToDo(
 // add test item to default project
 builder.addItemToProject(testItem, builder.projects["Default"]);
 
-// populate items-container with project title, project todoes as boxes and a way to create new todoes
+// populate items-container with project title, 
+// Add display of project todoes as boxes and a way to create new todoes
 const displayProject = (project) => {
   let projectTitle = document.getElementById("title");
   projectTitle.innerHTML = project.name;
@@ -55,8 +56,7 @@ const addProjectListener = () => {
   let projectsArray = Array.from(document.querySelectorAll(".project"));
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
     project.addEventListener("click", (e) => {
-      console.log(e.target);
-      console.log(builder.projects[e.target.innerHTML].name);
+      console.log(builder.projects[e.target.innerHTML]);
       displayProject(builder.projects[e.target.innerHTML]);
     })
   );
