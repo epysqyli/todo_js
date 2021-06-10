@@ -1,4 +1,5 @@
 // dom manipulation module
+// button event listeners should be here
 import builder from "./builder";
 
 const createItem = () => {

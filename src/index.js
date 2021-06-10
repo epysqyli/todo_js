@@ -5,4 +5,3 @@ import "@fortawesome/fontawesome-free/js/brands";
 
 import createItem from './dom';
 
-createItem();
