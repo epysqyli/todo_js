@@ -8,7 +8,7 @@ import builder from "./builder";
 //function for adding projects
 const addProject = (projectName) => {
   builder.createProject(projectName);
-  let projectsList = document.getElementById("projects");
+  let projectsList = document.getElementById("projects-list");
   let newProject = document.createElement("div");
   newProject.classList.add("project");
   newProject.innerHTML = builder.projects[projectName].name;
@@ -19,6 +19,5 @@ addProject("Default");
 
 const addBtn = document.getElementById('add-btn');
 addBtn.addEventListener("click", () => {
-  let projectName = document.getElementById('project-name').value;
-  addProject(projectName);
+  addProject(document.getElementById('project-name').value);
 })
