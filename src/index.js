@@ -5,9 +5,10 @@ import "@fortawesome/fontawesome-free/js/brands";
 
 import builder from "./builder";
 
-let addProject = document.getElementById('add-project');
-addProject.addEventListener("click", () => {
-  let projectName = prompt("Enter a project name");
-  builder.createProject(projectName);
-  content.innerHTML += builder.projects[projectName].name;
-})
+// create default Project and add it to the DOM --> make a function for this
+builder.createProject("defaultProject");
+let projectsList = document.getElementById("projects");
+let newProject = document.createElement("div");
+newProject.classList.add('project');
+newProject.innerHTML = builder.projects["defaultProject"].name;
+projectsList.appendChild(newProject);
