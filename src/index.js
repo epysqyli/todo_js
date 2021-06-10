@@ -2,33 +2,33 @@ import "@fortawesome/fontawesome-free/js/fontawesome";
 import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/regular";
 import "@fortawesome/fontawesome-free/js/brands";
-import "./builders";
-import builders from "./builders";
+import "./builder";
+import builder from "./builder";
 
 // object creation example
-builders.createProject("firstProject");
-let first = builders.createToDo(
+builder.createProject("firstProject");
+let first = builder.createToDo(
   "firstItem",
   "This is the first item I am going to cross",
   "someday"
 );
 
-builders.addItemToProject(first, builders.projects.firstProject);
+builder.addItemToProject(first, builder.projects.firstProject);
 
-builders.createProject("otherProject");
-let second = builders.createToDo(
+builder.createProject("otherProject");
+let second = builder.createToDo(
   "secondItem",
   "Some more stuff to do!",
   "some other day"
 );
 
-let third = builders.createToDo(
+let third = builder.createToDo(
   "thirdItem",
   "Some more stuff to do, it never ends!",
   "some other far away day"
 );
 
-builders.addItemToProject(second, builders.projects.otherProject);
-builders.addItemToProject(third, builders.projects.otherProject);
+builder.addItemToProject(second, builder.projects.otherProject);
+builder.addItemToProject(third, builder.projects.otherProject);
 
-console.log(builders.projects);
+console.log(builder.projects);
