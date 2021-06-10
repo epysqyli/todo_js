@@ -23,13 +23,25 @@ nav>#brand {
   float: left;
 }
 
+#brand span {
+  line-height: 3vh;
+  vertical-align: text-bottom;
+  margin-left: 1vw;
+  font-size: 2rem;
+  font-style: oblique;
+  font-weight: bold;
+  text-shadow: 2px 0 orange;
+}
+
 #items {
   float: right;
   display: flex;
+  align-items: center;
+  height: 3vh;
 }
 
 .nav-item {
-  border: 1px solid red;
+  border: 1px solid black;
   margin: 0 2vw;
   cursor: pointer;
 }
