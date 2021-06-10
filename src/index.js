@@ -32,25 +32,33 @@ addBtn.addEventListener("click", () => {
 // add default project
 addProject("Default");
 
+// define a test toDo item
 let testItem = builder.createToDo(
   "test Item",
   "Some stuff and some details",
   "sometime"
 );
+
+// add test item to default project
 builder.addItemToProject(testItem, builder.projects["Default"]);
 
 // populate items-container with project title, project todoes as boxes and a way to create new todoes
-const displayProject = (projectName) => {
+const displayProject = (project) => {
   let projectTitle = document.getElementById("title");
-  projectTitle.innerHTML = projectName.name;
+  projectTitle.innerHTML = project.name;
 };
 
-let i = 0; // variable used to avoid duplicating event listeners on previous projects after adding a new one
+// i used to avoid duplicating event listeners on previous projects after adding a new one with addBtn
+let i = 0;
 
 const addProjectListener = () => {
   let projectsArray = Array.from(document.querySelectorAll(".project"));
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
-    project.addEventListener("click", (e) => console.log(e.target))
+    project.addEventListener("click", (e) => {
+      console.log(e.target);
+      console.log(builder.projects[e.target.innerHTML].name);
+      displayProject(builder.projects[e.target.innerHTML]);
+    })
   );
 };
 
