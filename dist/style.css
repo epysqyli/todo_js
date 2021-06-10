@@ -6,11 +6,19 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(40, 50, 10, .1);
+}
+
+#content {
+  padding-top: 7vh;
 }
 
 nav {
   background-color: rgba(40, 50, 10, .1);
   padding: 2vh 2vw;
+  height: 7vh;
+  position: fixed;
+  width: 100%;
 }
 
 nav::after {
@@ -41,9 +49,14 @@ nav>#brand {
 }
 
 .nav-item {
-  border: 1px solid black;
+  border-bottom: 2px solid transparent;
   margin: 0 2vw;
+  padding: 1vh;
   cursor: pointer;
+}
+
+.nav-item:hover {
+  border-bottom: 2px solid black;
 }
 
 .to-do-box {
