@@ -67,11 +67,13 @@ nav>#brand {
   display: flex;
 }
 
-#projects {
+#projects-container {
   display: flex;
   flex-direction: column;
   margin: 10px;
   width: 20%;
+  max-height: 90vh;
+  min-width: 170px;
   border: 1px solid black;
   padding: 5px;
 }
@@ -87,6 +89,14 @@ nav>#brand {
   width: 90%;
   margin: auto;
   text-align: center;
+}
+
+#projects-list {
+  height: 80vh;
+  width: 100%;
+  max-height: 80vh;
+  overflow: auto;
+  border: 1px solid red;
 }
 
 #add-btn {
@@ -105,4 +115,11 @@ nav>#brand {
   border: 1px solid red;
   margin: 1vh auto;
   text-align: center;
+}
+
+#items-container {
+  height: 90vh;
+  border: 1px solid black;
+  flex-grow: 1;
+  margin: 1vh;
 }
