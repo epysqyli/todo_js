@@ -5,7 +5,7 @@ const createToDo = (
   title,
   description,
   dueDate,
-  project = "defaultProject",
+  project,
   complete = false
 ) => {
   return { title, description, dueDate, project, complete };
