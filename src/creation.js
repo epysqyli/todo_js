@@ -1,0 +1,1 @@
+// actual objects should be craeted here and exported to dom.js for dom manipulation

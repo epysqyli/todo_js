@@ -1,3 +1,5 @@
+// module defining object creation structures
+
 // declare factory function for toDo objects
 const createToDo = (
   title,
