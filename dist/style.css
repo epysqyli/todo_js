@@ -118,7 +118,7 @@ nav>#brand {
   padding: 1vh;
   width: 90%;
   flex-basis: 3vh;
-  border: 1px solid red;
+  border: 1px solid darkgrey;
   margin: 1vh auto;
   text-align: center;
 }
