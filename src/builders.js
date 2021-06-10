@@ -33,4 +33,4 @@ const addItemToProject = (item, project) => {
 };
 
 // export all functions and objects
-export default {createToDo, createProject, addItemToProject, projects};
+export default { createToDo, createProject, addItemToProject, projects };
