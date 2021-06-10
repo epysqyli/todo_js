@@ -83,10 +83,19 @@ nav>#brand {
 
 #new-project > * {
   display: block;
-  padding: 1vh;
+  padding: 1vh 0;
   width: 90%;
   margin: auto;
   text-align: center;
+}
+
+#add-btn {
+  text-transform: uppercase;
+  border: 1px solid black;
+  padding: 2px 1vw;
+  font-size: 0.8rem;
+  cursor: pointer;
+  float: right;
 }
 
 .project {
