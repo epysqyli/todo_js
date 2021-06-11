@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-free/js/brands";
 import builder from "./builder";
 import removeAllChildren from "./helpers";
 
-//function for adding projects
+//function for creating new project objects via the input element
 const addProject = (projectName) => {
   if (projectName == "") {
     return;
@@ -29,29 +29,30 @@ addBtn.addEventListener("click", () => {
   addProjectListener();
 });
 
-// add default project
-addProject("Default");
-
-// define a test toDo item
-let testItem = builder.createToDo(
-  "test Item",
-  "Some stuff and some details",
-  "sometime"
-);
-
-// add test item to default project
-builder.addItemToProject(testItem, builder.projects["Default"]);
-
-// populate items-container with project title, 
-// Add display of project todoes as boxes and a way to create new todoes
+// populate items-container with project title
 const displayProject = (project) => {
   let projectTitle = document.getElementById("title");
   projectTitle.innerHTML = project.name;
 };
 
+// populate items-container with the actual todoes belonging to the selected project
+const displayToDoes = (projectName) => {
+  const values = Object.values(builder.projects[projectName]).slice(2);
+  console.log(values);
+
+  let itemContainer = document.getElementById("to-does-container");
+  values.forEach(item => {
+    let itemBox = document.createElement("div");
+    itemBox.classList.add("to-do-box");
+    itemBox.innerHTML = item.toDo.title;
+    itemContainer.appendChild(itemBox);
+  })
+};
+
 // i used to avoid duplicating event listeners on previous projects after adding a new one with addBtn
 let i = 0;
 
+// enables clicking on the project list
 const addProjectListener = () => {
   let projectsArray = Array.from(document.querySelectorAll(".project"));
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
@@ -62,4 +63,27 @@ const addProjectListener = () => {
   );
 };
 
+//// NON DOM STUFF ////
+// add default project
+addProject("Default");
+
+// define a test toDo item
+let testItem = builder.createToDo(
+  "test Item",
+  "Some stuff and some details",
+  "sometime"
+);
+
+let secondItem = builder.createToDo(
+  "Second Item",
+  "Some stuff and some details",
+  "sometime soon"
+);
+
+// add test item to default project
+builder.addItemToProject(testItem, builder.projects["Default"]);
+builder.addItemToProject(secondItem, builder.projects["Default"]);
+
+// function to activate project event listener
 addProjectListener();
+displayToDoes("Default");
