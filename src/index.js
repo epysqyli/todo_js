@@ -47,7 +47,15 @@ const displayToDoes = (projectName) => {
   values.forEach(item => {
     let itemBox = document.createElement("div");
     itemBox.classList.add("to-do-box");
-    itemBox.innerHTML = item.toDo.title;
+    
+    // style the toDo item - title - p - due date - priority - complete or not
+    let title = document.createElement("h3");
+    title.innerHTML = item.toDo.title;
+    let description = document.createElement("p");
+    description.innerHTML =  item.toDo.description;
+    
+    itemBox.appendChild(title);
+    itemBox.appendChild(description);
     itemContainer.appendChild(itemBox);
   })
 };
