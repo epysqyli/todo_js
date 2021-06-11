@@ -55,13 +55,6 @@ nav>#brand {
   border-bottom: 2px solid black;
 }
 
-.to-do-box {
-  border: 1px solid black;
-  margin: 1vh;
-  padding: 10px;
-  width: 30%;
-}
-
 #content {
   padding-top: 8vh;
   display: flex;
@@ -152,4 +145,16 @@ nav>#brand {
 
 .navbar > #add-to-do {
   cursor: pointer;
+}
+
+.to-do-box {
+  border: 1px solid black;
+  margin: 1vh;
+  padding: 10px;
+  width: 30%;
+}
+
+#to-does-container {
+  display: flex;
+  padding: 1vh 1vw;
 }
