@@ -69,9 +69,9 @@ nav>#brand {
   width: 20%;
   max-height: 88vh;
   min-width: 170px;
-  border: 1px solid black;
   padding: 5px;
   background-color: rgba(40,30, 20, .1);
+  box-shadow: 0 0 4px 2px white;
 }
 
 #new-project {
@@ -125,9 +125,9 @@ nav>#brand {
 #items-container {
   height: 88vh;
   max-height: 88vh;
-  border: 1px solid black;
   flex-grow: 1;
   margin: 1vh;
+  box-shadow: 0 0 4px 2px black;
 }
 
 .navbar {
