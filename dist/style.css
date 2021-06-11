@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(40, 50, 10, .1);
+  background-color: rgba(20, 10, 5, .1);
 }
 
 nav {
@@ -78,10 +78,10 @@ nav>#brand {
   min-width: 170px;
   border: 1px solid black;
   padding: 5px;
+  background-color: rgba(40,30, 20, .1);
 }
 
 #new-project {
-  border: 1px solid red;
   flex-basis: 10vh;
 }
 
@@ -98,7 +98,6 @@ nav>#brand {
   width: 100%;
   max-height: 80vh;
   overflow: auto;
-  border: 1px solid red;
 }
 
 #projects-list > * {
@@ -107,20 +106,27 @@ nav>#brand {
 
 #add-btn {
   text-transform: uppercase;
-  border: 1px solid black;
-  padding: 2px 1vw;
-  font-size: 0.8rem;
+  padding: 2px 4px;
   cursor: pointer;
   float: right;
+}
+
+#add-btn:hover {
+  background-color: rgba(100, 100, 100, .25);
+}
+
+#add-btn:active {
+  background-color: white;
 }
 
 .project {
   padding: 1vh;
   width: 90%;
   flex-basis: 3vh;
-  border: 1px solid darkgrey;
+  border: 1px solid white;
   margin: 1vh auto;
   text-align: center;
+  background-color: rgba(40, 50, 10, .1);
 }
 
 #items-container {
