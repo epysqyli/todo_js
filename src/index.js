@@ -33,6 +33,7 @@ addBtn.addEventListener("click", () => {
 const displayProject = (project) => {
   let projectTitle = document.getElementById("title");
   projectTitle.innerHTML = project.name;
+  displayToDoes(project.name);
 };
 
 // populate items-container with the actual todoes belonging to the selected project
@@ -41,6 +42,8 @@ const displayToDoes = (projectName) => {
   console.log(values);
 
   let itemContainer = document.getElementById("to-does-container");
+  removeAllChildren(itemContainer);
+
   values.forEach(item => {
     let itemBox = document.createElement("div");
     itemBox.classList.add("to-do-box");
@@ -86,4 +89,3 @@ builder.addItemToProject(secondItem, builder.projects["Default"]);
 
 // function to activate project event listener
 addProjectListener();
-displayToDoes("Default");
