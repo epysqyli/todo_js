@@ -34,11 +34,17 @@ const displayToDoes = (projectName) => {
     // style the toDo item - title - p - due date - priority - complete or not
     let title = document.createElement("h3");
     title.innerHTML = item.toDo.title;
-    let description = document.createElement("p");
+    let description = document.createElement("div");
     description.innerHTML =  item.toDo.description;
+    let due = document.createElement("div");
+    due.innerHTML = `Due on: ${item.toDo.dueDate}`;
+    let status = document.createElement("div");
+    status.innerHTML = `Completed? ${item.toDo.complete}`;
     
     itemBox.appendChild(title);
     itemBox.appendChild(description);
+    itemBox.appendChild(due);
+    itemBox.appendChild(status);
     itemContainer.appendChild(itemBox);
   })
 };
