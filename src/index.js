@@ -27,26 +27,26 @@ const displayToDoes = (projectName) => {
   let itemContainer = document.getElementById("to-does-container");
   removeAllChildren(itemContainer);
 
-  values.forEach(item => {
+  values.forEach((item) => {
     let itemBox = document.createElement("div");
     itemBox.classList.add("to-do-box");
-    
+
     // style the toDo item - title - p - due date - priority - complete or not
     let title = document.createElement("h3");
     title.innerHTML = item.toDo.title;
     let description = document.createElement("div");
-    description.innerHTML =  item.toDo.description;
+    description.innerHTML = item.toDo.description;
     let due = document.createElement("div");
     due.innerHTML = `Due on: ${item.toDo.dueDate}`;
     let status = document.createElement("div");
     status.innerHTML = `Completed? ${item.toDo.complete}`;
-    
+
     itemBox.appendChild(title);
     itemBox.appendChild(description);
     itemBox.appendChild(due);
     itemBox.appendChild(status);
     itemContainer.appendChild(itemBox);
-  })
+  });
 };
 
 // populate items-container with project title
@@ -71,8 +71,8 @@ const addProjectListener = () => {
 };
 
 // define click event listener on add button for new projects
-const addBtn = document.getElementById("add-btn");
-addBtn.addEventListener("click", () => {
+const addProjectBtn = document.getElementById("add-project-btn");
+addProjectBtn.addEventListener("click", () => {
   i++; // to avoid duplicating event listeners
   let projectName = document.getElementById("project-name");
   addProject(projectName.value);
@@ -80,6 +80,53 @@ addBtn.addEventListener("click", () => {
   addProjectListener();
 });
 
+// define click event listener for add toTo Item button
+const addToDoBtn = document.getElementById("add-todo-btn");
+addToDoBtn.addEventListener("click", () => {
+  // function that adds and then displays new toDoItem object based on the selected project
+  let itemContainer = document.getElementById("to-does-container");
+  removeAllChildren(itemContainer);
+
+  let newToDoForm = document.createElement("div");
+  newToDoForm.id = "new-todo-form";
+
+  let titleLabel = document.createElement("label");
+  let title = document.createElement("input");
+  title.id = "todo-title";
+  titleLabel.textContent = "Enter the task name";
+  titleLabel.setAttribute("for", "todo-title");
+
+  let descLabel = document.createElement("label");
+  let desc = document.createElement("textarea");
+  desc.id = "todo-desc";
+  descLabel.textContent = "Enter the description";
+  descLabel.setAttribute("for", "todo-desc");
+
+  let dueDate = document.createElement("input");
+  dueDate.id = "due-date";
+  dueDate.type = "date";
+  let dueDateLabel = document.createElement("label");
+  dueDateLabel.setAttribute("for", "due-date");
+  dueDateLabel.textContent = "When is the task due?"
+
+  let submitBtn = document.createElement("div");
+  submitBtn.id = "submit-btn";
+  submitBtn.textContent = "Create Task";
+
+  newToDoForm.appendChild(titleLabel);
+  newToDoForm.appendChild(title);
+  newToDoForm.appendChild(descLabel);
+  newToDoForm.appendChild(desc);
+  newToDoForm.appendChild(dueDateLabel);
+  newToDoForm.appendChild(dueDate);
+  newToDoForm.appendChild(submitBtn);
+
+  itemContainer.appendChild(newToDoForm);
+
+  submitBtn.addEventListener("click", () => {
+    console.log(title.value, desc.value, dueDate.value);
+  })
+});
 
 //// NON DOM STUFF ////
 // add default project
