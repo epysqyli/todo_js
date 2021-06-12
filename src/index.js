@@ -19,37 +19,6 @@ const addProject = (projectName) => {
   projectsList.appendChild(newProject);
 };
 
-// i used to avoid duplicating event listeners on previous projects after adding a new one with addBtn
-let i = 0;
-
-// enables clicking on the project list
-const addProjectListener = () => {
-  let projectsArray = Array.from(document.querySelectorAll(".project"));
-  projectsArray.slice(i, projectsArray.length).forEach((project) =>
-    project.addEventListener("click", (e) => {
-      // console.log(builder.projects[e.target.innerHTML]);
-      displayProject(builder.projects[e.target.innerHTML]);
-    })
-  );
-};
-
-// define click event listener on add button for new projects
-const addBtn = document.getElementById("add-btn");
-addBtn.addEventListener("click", () => {
-  i++; // to avoid duplicating event listeners
-  let projectName = document.getElementById("project-name");
-  addProject(projectName.value);
-  projectName.value = "";
-  addProjectListener();
-});
-
-// populate items-container with project title
-const displayProject = (project) => {
-  let projectTitle = document.getElementById("title");
-  projectTitle.innerHTML = project.name;
-  displayToDoes(project.name);
-};
-
 // populate items-container with the actual todoes belonging to the selected project
 const displayToDoes = (projectName) => {
   const values = Object.values(builder.projects[projectName]).slice(2);
@@ -73,6 +42,37 @@ const displayToDoes = (projectName) => {
     itemContainer.appendChild(itemBox);
   })
 };
+
+// populate items-container with project title
+const displayProject = (project) => {
+  let projectTitle = document.getElementById("title");
+  projectTitle.innerHTML = project.name;
+  displayToDoes(project.name);
+};
+
+// i used to avoid duplicating event listeners on existing projects after adding a new one with addBtn
+let i = 0;
+
+// enables clicking on the project list
+const addProjectListener = () => {
+  let projectsArray = Array.from(document.querySelectorAll(".project"));
+  projectsArray.slice(i, projectsArray.length).forEach((project) =>
+    project.addEventListener("click", (e) => {
+      // console.log(builder.projects[e.target.innerHTML]);
+      displayProject(builder.projects[e.target.innerHTML]);
+    })
+  );
+};
+
+// define click event listener on add button for new projects
+const addBtn = document.getElementById("add-btn");
+addBtn.addEventListener("click", () => {
+  i++; // to avoid duplicating event listeners
+  let projectName = document.getElementById("project-name");
+  addProject(projectName.value);
+  projectName.value = "";
+  addProjectListener();
+});
 
 
 //// NON DOM STUFF ////
