@@ -19,6 +19,20 @@ const addProject = (projectName) => {
   projectsList.appendChild(newProject);
 };
 
+// i used to avoid duplicating event listeners on previous projects after adding a new one with addBtn
+let i = 0;
+
+// enables clicking on the project list
+const addProjectListener = () => {
+  let projectsArray = Array.from(document.querySelectorAll(".project"));
+  projectsArray.slice(i, projectsArray.length).forEach((project) =>
+    project.addEventListener("click", (e) => {
+      // console.log(builder.projects[e.target.innerHTML]);
+      displayProject(builder.projects[e.target.innerHTML]);
+    })
+  );
+};
+
 // define click event listener on add button for new projects
 const addBtn = document.getElementById("add-btn");
 addBtn.addEventListener("click", () => {
@@ -60,19 +74,6 @@ const displayToDoes = (projectName) => {
   })
 };
 
-// i used to avoid duplicating event listeners on previous projects after adding a new one with addBtn
-let i = 0;
-
-// enables clicking on the project list
-const addProjectListener = () => {
-  let projectsArray = Array.from(document.querySelectorAll(".project"));
-  projectsArray.slice(i, projectsArray.length).forEach((project) =>
-    project.addEventListener("click", (e) => {
-      console.log(builder.projects[e.target.innerHTML]);
-      displayProject(builder.projects[e.target.innerHTML]);
-    })
-  );
-};
 
 //// NON DOM STUFF ////
 // add default project
