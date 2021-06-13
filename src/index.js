@@ -58,6 +58,16 @@ const displayToDoes = (projectName) => {
     itemBox.appendChild(description);
     itemBox.appendChild(dateStatusContainer);
     itemContainer.appendChild(itemBox);
+
+    status.addEventListener("click", () => {
+      if (item.toDo.complete == false) {
+        item.toDo.complete = true;
+        status.innerHTML = "Mark as to be done";
+      } else {
+        item.toDo.complete = false;
+        status.innerHTML = "Mark as done";
+      }
+    });
   });
 };
 
