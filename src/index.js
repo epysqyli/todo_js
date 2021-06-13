@@ -123,8 +123,13 @@ addToDoBtn.addEventListener("click", () => {
 
   itemContainer.appendChild(newToDoForm);
 
+  let currentProject = document.getElementById("title");
+  let currentProjectName = currentProject.textContent; 
+
   submitBtn.addEventListener("click", () => {
     console.log(title.value, desc.value, dueDate.value);
+    let newToDo = builder.createToDo(title.value, desc.value, dueDate.value, currentProjectName);
+    builder.projects[currentProjectName].addToDo(newToDo);
   })
 });
 
@@ -136,18 +141,21 @@ addProject("Default");
 let testItem = builder.createToDo(
   "test Item",
   "Some stuff and some details",
-  "sometime"
+  "sometime",
+  "Default"
 );
 
 let secondItem = builder.createToDo(
   "Second Item",
   "Some stuff and some details",
-  "sometime soon"
+  "sometime soon",
+  "Default"
 );
 
 // add test item to default project
-builder.addItemToProject(testItem, builder.projects["Default"]);
-builder.addItemToProject(secondItem, builder.projects["Default"]);
+builder.projects["Default"].addToDo(testItem);
+builder.projects["Default"].addToDo(secondItem);
 
 // function to activate project event listener
 addProjectListener();
+console.log(builder.projects["Default"]);

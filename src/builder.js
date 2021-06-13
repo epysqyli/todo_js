@@ -28,11 +28,5 @@ const createProject = (projectName) => {
   projects.addProject(projectName);
 };
 
-// declare function to add todo items to an existing project
-const addItemToProject = (item, project) => {
-  item.project = project.name;
-  project.addToDo(item);
-};
-
 // export all functions and objects
-export default { createToDo, createProject, addItemToProject, projects };
+export default { createToDo, createProject, projects };
