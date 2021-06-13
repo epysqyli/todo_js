@@ -91,9 +91,25 @@ const addProjectListener = () => {
   let projectsArray = Array.from(document.querySelectorAll(".project"));
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
     project.addEventListener("click", (e) => {
+      let projectsArrayClone = Array.from(
+        document.querySelectorAll(".project")
+      );
+      updateSelectedProject(e.target, projectsArrayClone);
       displayProject(builder.projects[e.target.innerHTML]);
     })
   );
+};
+
+// define function that removes class from all array items except the selected one
+const updateSelectedProject = (selectedProject, array) => {
+  console.log(array);
+  array.forEach((project) => {
+    if (project.innerHTML != selectedProject.innerHTML) {
+      project.classList.remove("selected-project");
+    } else {
+      project.classList.add("selected-project");
+    }
+  });
 };
 
 // define click event listener on add button for new projects
