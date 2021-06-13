@@ -69,7 +69,7 @@ nav>#brand {
   min-width: 200px;
   padding: 5px;
   box-shadow: 0 0 4px 2px black;
-  background-color: rgba(95, 158, 160, 0.25);
+  background-color: rgba(95, 158, 160, 0.15);
 }
 
 #new-project {
@@ -140,7 +140,7 @@ nav>#brand {
   flex-grow: 1;
   margin: 1vh;
   box-shadow: 0 0 4px 2px black;
-  background-color: rgba(30, 144, 255, 0.1);
+  background-color: rgba(95, 158, 160, 0.15);
   position: relative;
 }
 
@@ -225,7 +225,6 @@ nav>#brand {
 
 #new-todo-form {
   flex-basis: 50%;
-  /* border: 1px solid black; */
   padding: 2vh 0;
   width: 50%;
   height: 60%;
