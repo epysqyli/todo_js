@@ -178,6 +178,7 @@ nav>#brand {
 
 #box-desc {
   margin: 1vh 0;
+  text-align: center;
 }
 
 #date-status-container {
@@ -203,6 +204,7 @@ nav>#brand {
 
 #to-does-container {
   display: flex;
+  flex-wrap: wrap;
   padding: 1vh 3vw;
   overflow: auto;
   max-height: 80vh;

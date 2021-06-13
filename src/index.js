@@ -176,4 +176,4 @@ let testItem = builder.createToDo(
 builder.projects["Default"].addToDo(testItem);
 
 // function to activate project event listener
-addProjectListener();
+addProjectListener(); // there seems to a be a bug if the plus button is clicked before entering a title
