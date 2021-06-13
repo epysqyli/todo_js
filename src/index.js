@@ -21,12 +21,12 @@ const addProject = (projectName) => {
 
 // populate items-container with the actual todoes belonging to the selected project
 const displayToDoes = (projectName) => {
-  const values = Object.values(builder.projects[projectName]).slice(2);
+  const toDoes = Object.values(builder.projects[projectName]).slice(2);
 
   let itemContainer = document.getElementById("to-does-container");
   removeAllChildren(itemContainer);
 
-  values.forEach((item) => {
+  toDoes.forEach((item) => {
     let itemBox = document.createElement("div");
     itemBox.classList.add("to-do-box");
 
