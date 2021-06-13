@@ -29,4 +29,4 @@ const createProject = (projectName) => {
 };
 
 // export all functions and objects
-export default { createToDo, createProject, projects };
+export default { createToDo, projects };

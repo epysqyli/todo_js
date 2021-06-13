@@ -11,7 +11,7 @@ const addProject = (projectName) => {
   if (projectName == "") {
     return;
   }
-  builder.createProject(projectName);
+  builder.projects.addProject(projectName);
   let projectsList = document.getElementById("projects-list");
   let newProject = document.createElement("div");
   newProject.classList.add("project");
@@ -22,7 +22,6 @@ const addProject = (projectName) => {
 // populate items-container with the actual todoes belonging to the selected project
 const displayToDoes = (projectName) => {
   const values = Object.values(builder.projects[projectName]).slice(2);
-  console.log(values);
 
   let itemContainer = document.getElementById("to-does-container");
   removeAllChildren(itemContainer);
@@ -64,7 +63,6 @@ const addProjectListener = () => {
   let projectsArray = Array.from(document.querySelectorAll(".project"));
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
     project.addEventListener("click", (e) => {
-      // console.log(builder.projects[e.target.innerHTML]);
       displayProject(builder.projects[e.target.innerHTML]);
     })
   );
@@ -126,7 +124,6 @@ addToDoBtn.addEventListener("click", () => {
   let currentProject = document.getElementById("title").textContent;
 
   submitBtn.addEventListener("click", () => {
-    console.log(title.value, desc.value, dueDate.value);
     let newToDo = builder.createToDo(
       title.value,
       desc.value,
@@ -152,17 +149,8 @@ let testItem = builder.createToDo(
   "Default"
 );
 
-let secondItem = builder.createToDo(
-  "Second Item",
-  "Some stuff and some details",
-  "sometime soon",
-  "Default"
-);
-
 // add test item to default project
 builder.projects["Default"].addToDo(testItem);
-builder.projects["Default"].addToDo(secondItem);
 
 // function to activate project event listener
 addProjectListener();
-console.log(builder.projects["Default"]);
