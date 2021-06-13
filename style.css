@@ -108,6 +108,11 @@ nav>#brand {
   border-color: cornflowerblue;
 }
 
+.selected-project {
+  background-color: cornflowerblue;
+  color: white;
+}
+
 #add-project-btn {
   text-transform: uppercase;
   padding: 2px 4px;
@@ -177,7 +182,6 @@ nav>#brand {
   padding: 10px;
   width: 30%;
   background-color: white;
-  /* border: 2px solid gray; */
   border-radius: 5px;
   box-shadow: 0 0 5px 2px black;
 }
@@ -213,6 +217,14 @@ nav>#brand {
 #box-status {
   cursor: pointer;
   padding: 5px;
+}
+
+#box-status:hover {
+  background-color: rgba(100, 149, 237, 0.2);
+}
+
+#box-status:active {
+  background-color: rgba(100, 149, 237, 1);
 }
 
 #to-does-container {
