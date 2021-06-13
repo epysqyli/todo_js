@@ -47,9 +47,14 @@ const displayToDoes = (projectName) => {
     due.innerHTML = `Due on:<br> ${item.toDo.dueDate}`;
     let status = document.createElement("div");
     status.id = "box-status";
-    item.toDo.complete == false
-      ? (status.innerHTML = "Mark as done")
-      : (status.innerHTML = "Mark as<br> to be done");
+
+    // this solves status overwrite when displaying todoes
+    if (item.toDo.complete == false) {
+      status.innerHTML = "Mark as done";
+    }
+    if (item.toDo.complete == true) {
+      status.innerHTML = "Mark as to be done";
+    }
 
     dateStatusContainer.appendChild(due);
     dateStatusContainer.appendChild(status);
