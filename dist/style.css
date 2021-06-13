@@ -171,11 +171,34 @@ nav>#brand {
 
 #box-title {
   text-align: center;
-  margin: 1vh 0;
+  margin: 1vh 0 2vh;
+  padding: 10px;
+  border-bottom: 2px solid cadetblue;
 }
 
 #box-desc {
   margin: 1vh 0;
+}
+
+#date-status-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 5vh;
+}
+
+#box-due, #box-status {
+  border: 2px solid cadetblue;
+  border-radius: 5px;
+  padding: 5px;
+  height: 100%;
+}
+
+#box-status {
+  cursor: pointer;
+  line-height: 5vh;
+  padding: 0 5px;
 }
 
 #to-does-container {

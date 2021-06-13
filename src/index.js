@@ -37,17 +37,26 @@ const displayToDoes = (projectName) => {
     let description = document.createElement("div");
     description.id = "box-desc";
     description.innerHTML = item.toDo.description;
+
+    // create a flex div with date on the left and status on the right
+    let dateStatusContainer = document.createElement("div");
+    dateStatusContainer.id = "date-status-container";
+
     let due = document.createElement("div");
     due.id = "box-due";
-    due.innerHTML = `Due on: ${item.toDo.dueDate}`;
+    due.innerHTML = `Due on:<br> ${item.toDo.dueDate}`;
     let status = document.createElement("div");
     status.id = "box-status";
-    status.innerHTML = `Completed? ${item.toDo.complete}`;
+    item.toDo.complete == false
+      ? (status.innerHTML = "Mark as done")
+      : (status.innerHTML = "Mark as<br> to be done");
+
+    dateStatusContainer.appendChild(due);
+    dateStatusContainer.appendChild(status);
 
     itemBox.appendChild(title);
     itemBox.appendChild(description);
-    itemBox.appendChild(due);
-    itemBox.appendChild(status);
+    itemBox.appendChild(dateStatusContainer);
     itemContainer.appendChild(itemBox);
   });
 };
@@ -149,7 +158,7 @@ addProject("Default");
 let testItem = builder.createToDo(
   "Test Item",
   "Some stuff and some details Some stuff and some details Some stuff and some details Some stuff and some details ",
-  "sometime",
+  "20-10-2021",
   "Default"
 );
 
