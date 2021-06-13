@@ -107,7 +107,7 @@ addToDoBtn.addEventListener("click", () => {
   dueDate.type = "date";
   let dueDateLabel = document.createElement("label");
   dueDateLabel.setAttribute("for", "due-date");
-  dueDateLabel.textContent = "When is the task due?"
+  dueDateLabel.textContent = "When is the task due?";
 
   let submitBtn = document.createElement("div");
   submitBtn.id = "submit-btn";
@@ -123,14 +123,21 @@ addToDoBtn.addEventListener("click", () => {
 
   itemContainer.appendChild(newToDoForm);
 
-  let currentProject = document.getElementById("title");
-  let currentProjectName = currentProject.textContent; 
+  let currentProject = document.getElementById("title").textContent;
 
   submitBtn.addEventListener("click", () => {
     console.log(title.value, desc.value, dueDate.value);
-    let newToDo = builder.createToDo(title.value, desc.value, dueDate.value, currentProjectName);
-    builder.projects[currentProjectName].addToDo(newToDo);
-  })
+    let newToDo = builder.createToDo(
+      title.value,
+      desc.value,
+      dueDate.value,
+      currentProject
+    );
+    builder.projects[currentProject].addToDo(newToDo);
+
+    // render the project view again
+    displayToDoes(currentProject);
+  });
 });
 
 //// NON DOM STUFF ////
