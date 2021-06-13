@@ -32,12 +32,16 @@ const displayToDoes = (projectName) => {
 
     // style the toDo item - title - p - due date - priority - complete or not
     let title = document.createElement("h3");
+    title.id = "box-title";
     title.innerHTML = item.toDo.title;
     let description = document.createElement("div");
+    description.id = "box-desc";
     description.innerHTML = item.toDo.description;
     let due = document.createElement("div");
+    due.id = "box-due";
     due.innerHTML = `Due on: ${item.toDo.dueDate}`;
     let status = document.createElement("div");
+    status.id = "box-status";
     status.innerHTML = `Completed? ${item.toDo.complete}`;
 
     itemBox.appendChild(title);
@@ -143,8 +147,8 @@ addProject("Default");
 
 // define a test toDo item
 let testItem = builder.createToDo(
-  "test Item",
-  "Some stuff and some details",
+  "Test Item",
+  "Some stuff and some details Some stuff and some details Some stuff and some details Some stuff and some details ",
   "sometime",
   "Default"
 );

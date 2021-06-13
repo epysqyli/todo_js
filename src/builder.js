@@ -23,10 +23,5 @@ let projects = {
   },
 };
 
-// declare explicit function to create projects
-const createProject = (projectName) => {
-  projects.addProject(projectName);
-};
-
 // export all functions and objects
 export default { createToDo, projects };
