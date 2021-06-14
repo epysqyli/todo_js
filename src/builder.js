@@ -1,22 +1,16 @@
 // module defining object creation structures
 
 // declare factory function for toDo objects
-const createToDo = (
-  title,
-  description,
-  dueDate,
-  project,
-  complete = false
-) => {
+const createToDo = (title, description, dueDate, project, complete = false) => {
   return { title, description, dueDate, project, complete };
 };
 
 // declare object containing all projects
 let projects = {
-  addProject: function (projectName) {
+  addProject(projectName) {
     this[projectName] = {
       name: String(projectName),
-      addToDo: function (toDo) {
+      addToDo(toDo) {
         this[toDo.title] = { toDo };
       },
     };
