@@ -251,6 +251,7 @@ nav>#brand {
 
 .box-done {
   background-color: lightgray;
+  box-shadow: 0 0 2px 2px black inset;
 }
 
 #box-edit {
