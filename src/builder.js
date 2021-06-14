@@ -6,7 +6,7 @@ const createToDo = (title, description, dueDate, project, complete = false) => {
 };
 
 // declare object containing all projects
-let projects = {
+const projects = {
   addProject(projectName) {
     this[projectName] = {
       name: String(projectName),
