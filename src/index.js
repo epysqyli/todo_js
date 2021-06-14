@@ -64,9 +64,14 @@ const displayToDoes = (projectName) => {
     deleteBtn.id = "box-delete";
     deleteBtn.innerHTML = "Delete Item";
 
+    let editBtn = document.createElement("div");
+    editBtn.id = "box-edit";
+    editBtn.innerHTML = "Edit Item";
+
     itemBox.appendChild(title);
     itemBox.appendChild(description);
     itemBox.appendChild(dateStatusContainer);
+    itemBox.append(editBtn);
     itemBox.append(deleteBtn);
     itemContainer.appendChild(itemBox);
 
