@@ -117,10 +117,7 @@ const displayToDoes = (projectName) => {
       let dueDate = document.createElement("input");
       dueDate.id = "due-date";
       dueDate.type = "date";
-      // date format manipulation to allow proper edit display
-      let dateArray = item.toDo.dueDate.split("-");
-      let newDate = `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
-      dueDate.value = newDate;
+      dueDate.value = item.toDo.dueDate;
       let dueDateLabel = document.createElement("label");
       dueDateLabel.setAttribute("for", "due-date");
       dueDateLabel.textContent = "When is the task due?";
@@ -265,7 +262,7 @@ addProject("Default");
 let testItem = builder.createToDo(
   "Test Item",
   "Some stuff and some details Some stuff and some details Some stuff and some details Some stuff and some details ",
-  "20-10-2021",
+  "2021-10-20",
   "Default"
 );
 
