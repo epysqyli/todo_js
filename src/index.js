@@ -162,7 +162,8 @@ let i = 0;
 
 // enables clicking on the project list
 const addProjectListener = () => {
-  let projectsArray = Array.from(document.querySelectorAll(".project"));
+  // let projectsArray = Array.from(document.querySelectorAll(".project"));
+  let projectsArray = [...document.querySelectorAll(".project")];
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
     project.addEventListener("click", (e) => {
       let projectsArrayClone = Array.from(
