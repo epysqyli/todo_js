@@ -91,6 +91,61 @@ const displayToDoes = (projectName) => {
       delete builder.projects[projectName][item.toDo.title];
       displayToDoes(projectName);
     })
+
+    // event listener to edit item
+    editBtn.addEventListener("click", () => {
+      let itemContainer = document.getElementById("to-does-container");
+      removeAllChildren(itemContainer);
+    
+      let newToDoForm = document.createElement("div");
+      newToDoForm.id = "new-todo-form";
+    
+      let titleLabel = document.createElement("label");
+      let title = document.createElement("input");
+      title.value = item.toDo.title;
+      title.id = "todo-title";
+      titleLabel.textContent = "Enter the task name";
+      titleLabel.setAttribute("for", "todo-title");
+    
+      let descLabel = document.createElement("label");
+      let desc = document.createElement("textarea");
+      desc.value = item.toDo.description;
+      desc.id = "todo-desc";
+      descLabel.textContent = "Enter the description";
+      descLabel.setAttribute("for", "todo-desc");
+    
+      let dueDate = document.createElement("input");
+      dueDate.id = "due-date";
+      dueDate.type = "date";
+      let dueDateLabel = document.createElement("label");
+      dueDateLabel.setAttribute("for", "due-date");
+      dueDateLabel.textContent = "When is the task due?";
+    
+      let submitBtn = document.createElement("div");
+      submitBtn.id = "submit-btn";
+      submitBtn.textContent = "Edit Task";
+    
+      newToDoForm.appendChild(titleLabel);
+      newToDoForm.appendChild(title);
+      newToDoForm.appendChild(descLabel);
+      newToDoForm.appendChild(desc);
+      newToDoForm.appendChild(dueDateLabel);
+      newToDoForm.appendChild(dueDate);
+      newToDoForm.appendChild(submitBtn);
+    
+      itemContainer.appendChild(newToDoForm);
+    
+      let currentProject = document.getElementById("title").textContent;
+    
+      submitBtn.addEventListener("click", () => {
+        item.toDo.title = title.value;
+        item.toDo.description = desc.value;
+        item.toDo.dueDate = dueDate.value;
+        item.toDo.project = currentProject;    
+        // render the project view again
+        displayToDoes(currentProject);
+      });
+    })
   });
 };
 
