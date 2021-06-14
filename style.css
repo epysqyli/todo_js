@@ -237,19 +237,42 @@ nav>#brand {
   cursor: pointer;
 }
 
-.box-done {
-  background-color: lightgray;
-}
 
 #box-delete:hover {
-  color: red;
+  color: crimson;
   background-color: rgba(95, 158, 160, 0.2);
 }
 
 #box-delete:active {
-  border-color: red;
+  border-color: crimson;
   color: cadetblue;
   background-color: rgba(255, 0, 0, 0.2);
+}
+
+.box-done {
+  background-color: lightgray;
+}
+
+#box-edit {
+  border: 2px solid cornflowerblue;
+  color: darkblue;
+  border-radius: 5px;
+  padding: 5px;
+  width: 95%;
+  margin: 1vh auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+#box-edit:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+#box-edit:active {
+  background-color: white;
+  color: darkblue;
+  border-color: cornflowerblue;
 }
 
 #to-does-container {
