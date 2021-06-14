@@ -54,6 +54,7 @@ const displayToDoes = (projectName) => {
     }
     if (item.toDo.complete == true) {
       status.innerHTML = "Mark as to be done";
+      itemBox.classList.add("box-done");
     }
 
     dateStatusContainer.appendChild(due);
@@ -73,9 +74,11 @@ const displayToDoes = (projectName) => {
       if (item.toDo.complete == false) {
         item.toDo.complete = true;
         status.innerHTML = "Mark as to be done";
+        itemBox.classList.add("box-done");
       } else {
         item.toDo.complete = false;
         status.innerHTML = "Mark as done";
+        itemBox.classList.remove("box-done");
       }
     });
 
