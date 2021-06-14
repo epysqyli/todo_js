@@ -227,6 +227,27 @@ nav>#brand {
   background-color: rgba(100, 149, 237, 1);
 }
 
+#box-delete {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 95%;
+  margin: 1vh auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+#box-delete:hover {
+  color: red;
+  background-color: rgba(95, 158, 160, 0.2);
+}
+
+#box-delete:active {
+  border-color: red;
+  color: cadetblue;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
 #to-does-container {
   display: flex;
   flex-wrap: wrap;

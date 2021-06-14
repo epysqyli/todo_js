@@ -59,9 +59,14 @@ const displayToDoes = (projectName) => {
     dateStatusContainer.appendChild(due);
     dateStatusContainer.appendChild(status);
 
+    let deleteBtn = document.createElement("div");
+    deleteBtn.id = "box-delete";
+    deleteBtn.innerHTML = "Delete Item";
+
     itemBox.appendChild(title);
     itemBox.appendChild(description);
     itemBox.appendChild(dateStatusContainer);
+    itemBox.append(deleteBtn);
     itemContainer.appendChild(itemBox);
 
     status.addEventListener("click", () => {
@@ -73,6 +78,11 @@ const displayToDoes = (projectName) => {
         status.innerHTML = "Mark as done";
       }
     });
+
+    deleteBtn.addEventListener("click", () => {
+      delete builder.projects[projectName][item.toDo.title];
+      displayToDoes(projectName);
+    })
   });
 };
 
@@ -100,9 +110,8 @@ const addProjectListener = () => {
   );
 };
 
-// define function that removes class from all array items except the selected one
+// define function that removes class from all array items (using clone array) except the selected one
 const updateSelectedProject = (selectedProject, array) => {
-  console.log(array);
   array.forEach((project) => {
     if (project.innerHTML != selectedProject.innerHTML) {
       project.classList.remove("selected-project");
