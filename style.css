@@ -237,6 +237,10 @@ nav>#brand {
   cursor: pointer;
 }
 
+.box-done {
+  background-color: lightgray;
+}
+
 #box-delete:hover {
   color: red;
   background-color: rgba(95, 158, 160, 0.2);
