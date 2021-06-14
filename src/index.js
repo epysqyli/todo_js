@@ -90,45 +90,45 @@ const displayToDoes = (projectName) => {
     deleteBtn.addEventListener("click", () => {
       delete builder.projects[projectName][item.toDo.title];
       displayToDoes(projectName);
-    })
+    });
 
     // event listener to edit item
     editBtn.addEventListener("click", () => {
       let itemContainer = document.getElementById("to-does-container");
       removeAllChildren(itemContainer);
-    
+
       let newToDoForm = document.createElement("div");
       newToDoForm.id = "new-todo-form";
-    
+
       let titleLabel = document.createElement("label");
       let title = document.createElement("input");
       title.value = item.toDo.title;
       title.id = "todo-title";
       titleLabel.textContent = "Enter the task name";
       titleLabel.setAttribute("for", "todo-title");
-    
+
       let descLabel = document.createElement("label");
       let desc = document.createElement("textarea");
       desc.value = item.toDo.description;
       desc.id = "todo-desc";
       descLabel.textContent = "Enter the description";
       descLabel.setAttribute("for", "todo-desc");
-    
+
       let dueDate = document.createElement("input");
       dueDate.id = "due-date";
       dueDate.type = "date";
       // date format manipulation to allow proper edit display
-      let dateArray  = item.toDo.dueDate.split("-");
+      let dateArray = item.toDo.dueDate.split("-");
       let newDate = `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
       dueDate.value = newDate;
       let dueDateLabel = document.createElement("label");
       dueDateLabel.setAttribute("for", "due-date");
       dueDateLabel.textContent = "When is the task due?";
-    
+
       let submitBtn = document.createElement("div");
       submitBtn.id = "submit-btn";
       submitBtn.textContent = "Edit Task";
-    
+
       newToDoForm.appendChild(titleLabel);
       newToDoForm.appendChild(title);
       newToDoForm.appendChild(descLabel);
@@ -136,20 +136,20 @@ const displayToDoes = (projectName) => {
       newToDoForm.appendChild(dueDateLabel);
       newToDoForm.appendChild(dueDate);
       newToDoForm.appendChild(submitBtn);
-    
+
       itemContainer.appendChild(newToDoForm);
-    
+
       let currentProject = document.getElementById("title").textContent;
-    
+
       submitBtn.addEventListener("click", () => {
         item.toDo.title = title.value;
         item.toDo.description = desc.value;
         item.toDo.dueDate = dueDate.value;
-        item.toDo.project = currentProject;    
+        item.toDo.project = currentProject;
         // render the project view again
         displayToDoes(currentProject);
       });
-    })
+    });
   });
 };
 
@@ -274,3 +274,6 @@ builder.projects["Default"].addToDo(testItem);
 
 // function to activate project event listener
 addProjectListener(); // there seems to a be a bug if the plus button is clicked before entering a title
+window.onload = function () {
+  document.getElementsByClassName("project")[0].click();
+};
