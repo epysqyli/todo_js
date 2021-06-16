@@ -166,9 +166,7 @@ const addProjectListener = () => {
   let projectsArray = [...document.querySelectorAll(".project")];
   projectsArray.slice(i, projectsArray.length).forEach((project) =>
     project.addEventListener("click", (e) => {
-      let projectsArrayClone = Array.from(
-        document.querySelectorAll(".project")
-      );
+      let projectsArrayClone = [...document.querySelectorAll(".project")];
       updateSelectedProject(e.target, projectsArrayClone);
       displayProject(builder.projects[e.target.innerHTML]);
     })
