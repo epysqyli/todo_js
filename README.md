@@ -1,5 +1,6 @@
 # todo_js
-The Odin Project: Todo List vanilla JS
+The Odin Project: Todo List vanilla JS webpack
+
 https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/javascript/lessons/todo-list
 
 Check live here:
